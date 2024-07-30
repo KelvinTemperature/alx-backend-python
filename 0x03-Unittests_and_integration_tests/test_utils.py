@@ -7,7 +7,7 @@ from utils import (access_nested_map, get_json, memoize)
 
 class TestAccessNestedMap(unittest.TestCase):
     """Test access_nested_map"""
-    
+
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {'b': 2}),
@@ -16,7 +16,7 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map(self, nested_map, path, expected):
         """function to test function"""
         self.assertEqual(access_nested_map(nested_map, path), expected)
-        
+
     @parameterized.expand([
         ({}, ("a",), 'a'),
         ({"a": 1}, ("a", "b"), 'b')
